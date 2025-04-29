@@ -1,0 +1,51 @@
+name-template: 'v$RESOLVED_VERSION 🎉'
+tag-template: 'v$RESOLVED_VERSION'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+
+categories:
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bug'
+      - 'fix'
+
+  - title: '🛠 Frameworks and Tools'
+    labels:
+      - 'framework'
+      - 'enhancement'
+      - 'tool'
+
+  - title: '🤖 Maintenance and Automation'
+    labels:
+      - 'chore'
+      - 'infra'
+      - 'maintenance'
+
+  - title: '📚 Documentation and Website'
+    labels:
+      - 'documentation'
+      - 'docs'
+      - 'website'
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&' # Escape markdown special characters
+
+template: |
+  ## What's Changed
+
+  $CHANGES
+
+  ### Contributors
+
+  $CONTRIBUTORS
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
